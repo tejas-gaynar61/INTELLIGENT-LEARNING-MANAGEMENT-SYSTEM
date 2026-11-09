@@ -147,4 +147,4 @@ http.createServer(async (req, res) => {
     if (u && u.password === b.get('password')) {
       const sid = crypto.randomBytes(24).toString('hex');
       sessions[sid] = b.get('username');
-      return redirect(res, '/dashboard', { 'Set
+      return redirect(res, '/dashboard', { 'Set-cookie': 'session=${token}; HttpOnly; path=/' });
